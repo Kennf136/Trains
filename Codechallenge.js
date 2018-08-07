@@ -141,11 +141,16 @@ function distanceRouter(v, w, x, y, z) {
 
 let tripDistance= StartPoint+layover1+layover2+endPoint
 
+function isRout (layover1,StartPoint){
+    if (layover1==0 && StartPoint==0 ){ console.log('NO SUCH ROUTE')}
+        else{   console.log("Your total trip will  have a distance of " + tripDistance)}
+    }
+
     console.log("Your trip from "+ v+ " to " + w + " will have a distance of " + StartPoint)
     console.log("Your trip from "+ w+ " to " + x + " will have a distance of " + layover1)
     console.log("Your trip from "+ x+ " to " + y + " will have a distance of " + layover2)
     console.log("Your trip from "+ y+ " to " + z + " will have a distance of " + endPoint)
-    console.log("Your total trip will  have a distance of " + tripDistance)
+  isRout(StartPoint,layover1)
 }
 
 
