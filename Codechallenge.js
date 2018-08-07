@@ -176,8 +176,23 @@ function distanceRouter(v, w, x, y, z) {
     console.log("Your trip from " + w + " to " + x + " will have a distance of " + layover1)
     console.log("Your trip from " + x + " to " + y + " will have a distance of " + layover2)
     console.log("Your trip from " + y + " to " + z + " will have a distance of " + endPoint)
+    
     isRout(StartPoint, layover1, endPoint, layover2)
+
 }
+
+
+
+
+
+
+function howRout(){
+
+    
+}
+
+
+
 
 
 distanceRouter("A", "B", "C", 0, 0);
