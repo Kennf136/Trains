@@ -122,14 +122,14 @@ function distanceRouter(v, w, x, y, z) {
     }
     function end(third) {
         if (endPoint == "AB") { 5 }
-        else if (endPoint == 'BC') { 4 }
-        else if (endPoint == 'CD') { 8 }
-        else if (endPoint == 'DC') { 8 }
-        else if (endPoint == 'DE') { 6 }
-        else if (endPoint == 'AD') { 5 }
-        else if (endPoint == 'CE') { 2 }
-        else if (endPoint == 'EB') { 3 }
-        else if (endPoint == 'AE') { 7 }
+        else if (endPoint == 'BC') {endPoint= 4 }
+        else if (endPoint == 'CD') {endPoint= 8 }
+        else if (endPoint == 'DC') {endPoint= 8 }
+        else if (endPoint == 'DE') {endPoint= 6 }
+        else if (endPoint == 'AD') { endPoint=5 }
+        else if (endPoint == 'CE') { endPoint=2 }
+        else if (endPoint == 'EB') {endPoint= 3 }
+        else if (endPoint == 'AE') {endPoint= 7 }
         else { endPoint = 0 }
     }
 
@@ -150,3 +150,11 @@ let tripDistance= StartPoint+layover1+layover2+endPoint
 
 
 distanceRouter("A", "B", "C", 0, 0);
+
+distanceRouter("A", "D", 0 , 0, 0);
+
+distanceRouter("A", "D", "C", 0, 0);
+
+distanceRouter("A", "E", "B", "C", "D");
+
+distanceRouter("A", "E", "D", 0, 0);
