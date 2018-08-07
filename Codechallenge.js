@@ -92,7 +92,13 @@ function distanceRouter(v, w, x, y, z) {
         else if (StartPoint == "CE") { StartPoint = 2 }
         else if (StartPoint == "EB") { StartPoint = 3 }
         else if (StartPoint == "AE") { StartPoint = 7 }
-        else { startPoint = 0 }
+        else if (StartPoint == 'A0') { StartPoint = 0 }
+        else if (StartPoint == 'B0') { StartPoint = 0 }
+        else if (StartPoint == 'C0') { StartPoint = 0 }
+        else if (StartPoint == 'D0') { StartPoint = 0 }
+        else if (StartPoint == 'E0') { StartPoint = 0 }
+        else if (StartPoint == '00') { StartPoint = 0 }
+        else { startPoint = 'NO SUCH ROUTE' }
     }
 
     function first(firstStop) {
@@ -105,7 +111,13 @@ function distanceRouter(v, w, x, y, z) {
         else if (layover1 == "CE") { layover1 = 2 }
         else if (layover1 == "EB") { layover1 = 3 }
         else if (layover1 == "AE") { layover1 = 7 }
-        else { layover1 = 0 }
+        else if (layover1 == 'A0') { layover1 = 0 }
+        else if (layover1 == 'B0') { layover1 = 0 }
+        else if (layover1 == 'C0') { layover1 = 0 }
+        else if (layover1 == 'D0') { layover1 = 0 }
+        else if (layover1 == 'E0') { layover1 = 0 }
+        else if (layover1 == '00') { layover1 = 0 }
+        else { layover1 = 'NO SUCH ROUTE' }
     }
 
     function second(secondStop) {
@@ -118,45 +130,59 @@ function distanceRouter(v, w, x, y, z) {
         else if (layover2 == "CE") { layover2 = 2 }
         else if (layover2 == "EB") { layover2 = 3 }
         else if (layover2 == "AE") { layover2 = 7 }
-        else { layover2 = 0 }
+        else if (layover2 == 'A0') { layover2 = 0 }
+        else if (layover2 == 'B0') { layover2 = 0 }
+        else if (layover2 == 'C0') { layover2 = 0 }
+        else if (layover2 == 'D0') { layover2 = 0 }
+        else if (layover2 == 'E0') { layover2 = 0 }
+        else if (layover2 == '00') { layover2 = 0 }
+        else { layover2 = 'NO SUCH ROUTE' }
     }
     function end(third) {
         if (endPoint == "AB") { 5 }
-        else if (endPoint == 'BC') {endPoint= 4 }
-        else if (endPoint == 'CD') {endPoint= 8 }
-        else if (endPoint == 'DC') {endPoint= 8 }
-        else if (endPoint == 'DE') {endPoint= 6 }
-        else if (endPoint == 'AD') { endPoint=5 }
-        else if (endPoint == 'CE') { endPoint=2 }
-        else if (endPoint == 'EB') {endPoint= 3 }
-        else if (endPoint == 'AE') {endPoint= 7 }
-        else { endPoint = 0 }
+        else if (endPoint == 'BC') { endPoint = 4 }
+        else if (endPoint == 'CD') { endPoint = 8 }
+        else if (endPoint == 'DC') { endPoint = 8 }
+        else if (endPoint == 'DE') { endPoint = 6 }
+        else if (endPoint == 'AD') { endPoint = 5 }
+        else if (endPoint == 'CE') { endPoint = 2 }
+        else if (endPoint == 'EB') { endPoint = 3 }
+        else if (endPoint == 'AE') { endPoint = 7 }
+        else if (endPoint == 'A0') { endPoint = 0 }
+        else if (endPoint == 'B0') { endPoint = 0 }
+        else if (endPoint == 'C0') { endPoint = 0 }
+        else if (endPoint == 'D0') { endPoint = 0 }
+        else if (endPoint == 'E0') { endPoint = 0 }
+        else if (endPoint == '00') { endPoint = 0 }
+        else { endPoint = 'NO SUCH ROUTE' }
     }
 
- 
+
     starting(StartPoint)
     first(layover1)
     second(layover2)
     end(endPoint)
 
-let tripDistance= StartPoint+layover1+layover2+endPoint
+    let tripDistance = StartPoint + layover1 + layover2 + endPoint
 
-function isRout (layover1,StartPoint){
-    if (layover1==0 && StartPoint==0 ){ console.log('NO SUCH ROUTE')}
-        else{   console.log("Your total trip will  have a distance of " + tripDistance)}
+
+    function isRout(layover1, StartPoint,endPoint,layover2) {
+        if (layover1 == 'NO SUCH ROUTE' || StartPoint == 'NO SUCH ROUTE' || endPoint == 'NO SUCH ROUTE' || layover2 == 'NO SUCH ROUTE') { console.log('NO SUCH ROUTE') }
+        else { console.log("Your total trip will  have a distance of " + tripDistance) }
     }
 
-    console.log("Your trip from "+ v+ " to " + w + " will have a distance of " + StartPoint)
-    console.log("Your trip from "+ w+ " to " + x + " will have a distance of " + layover1)
-    console.log("Your trip from "+ x+ " to " + y + " will have a distance of " + layover2)
-    console.log("Your trip from "+ y+ " to " + z + " will have a distance of " + endPoint)
-  isRout(StartPoint,layover1)
+
+    console.log("Your trip from " + v + " to " + w + " will have a distance of " + StartPoint)
+    console.log("Your trip from " + w + " to " + x + " will have a distance of " + layover1)
+    console.log("Your trip from " + x + " to " + y + " will have a distance of " + layover2)
+    console.log("Your trip from " + y + " to " + z + " will have a distance of " + endPoint)
+    isRout(StartPoint, layover1, endPoint, layover2)
 }
 
 
 distanceRouter("A", "B", "C", 0, 0);
 
-distanceRouter("A", "D", 0 , 0, 0);
+distanceRouter("A", "D", 0, 0, 0);
 
 distanceRouter("A", "D", "C", 0, 0);
 
